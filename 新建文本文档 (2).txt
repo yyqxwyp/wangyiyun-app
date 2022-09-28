@@ -1,0 +1,80 @@
+1 首页
+ vant组件库   vue3组合式api
+使用axios获取 封装axios
+
+vant组件是专门写在一个插件里面的 在plugins的index。js中
+
+接口是网易云API接口下载的官方文档
+
+2 歌单详情页面
+路由跳转
+路由传参
+vuex实现底部组件的制作
+使用h5的知识以及vue的监听实现播放音乐功能
+
+播放按钮使用play（）这个方法实现
+切换不同歌曲的时候，按钮也跟着改变
+
+切换歌曲用watch监听
+使用watch监听playListIndex是否改变 如果改变 则自动播放音乐
+
+
+
+
+3 歌曲详情页
+vant抽屉组件
+vue3 Marquee组件实现页面头部跑马灯
+、、、、、、、、、父向子传值  props接收
+跑马灯：使用了vue3组件marquee
+
+
+
+使用css3知识实现磁盘磁针的移动
+
+、、、、、、、、、
+transform
+transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。
+rotate()	旋转
+scale()	缩放
+translate()	位移
+skew()
+transition 过渡效果
+、、、、、、歌词截取 用数组截取的方法slice（）取头不取尾
+、、、、、、、、、、  // 垂直排列
+  flex-direction: column;
+  // 居中
+  align-items: center;
+、、、、、美化歌词显示 最后一句不显示的问题：offsetTop拿不到p的值
+就判断isNaN是否为NaN 若为 就为pre设置一个固定的值
+
+底部的播放功能使用组件之间的通信进行传值
+使用动态class以及计算属性实现对歌词样式的凸出
+使用vue的挖提出监听和ref实现歌词滚动效果
+使用vuex以及定时器来实现进度条
+实现上一首和下一首切换（添加click事件）
+
+4 搜索页面
+、、、、历史搜索local-保存在本地  刷新后历史搜索记录也在
+使用localstorage进行历史记录的保存 使用es6的set对数据进行去重
+在搜索出来的结果也可以进行点击 
+
+5 个人中心页面
+使用路由守卫 进行权限判断
+。。。。    // 路由守卫 权限判断
+    beforeEnter: (to, from, next) => {
+      if (store.state.isLogin) {
+        next()
+      } else {
+        next('/login')
+      }
+    },
+未登录进入登录页面 实现登录功能 以及token 并保存下来 保持登录状态
+个人中心页面根据登录成功返回个人id去获取对应的个人数据进行渲染
+
+
+
+
+如何进去页面：首先在cmd中运行api那个文件 输入node app.js运行
+再在网易云里面运行npm run serve
+
+
